@@ -6,6 +6,7 @@
     <test name="AutomationExercises" preserve-order="false">
         <classes>
             <class name="tests.SignupLoginTests"/>
+            <class name="tests.ContactTests"/>
         </classes>
     </test>
 </suite>
