@@ -243,4 +243,10 @@ public class SignupLoginPage extends BasePage{
         Assert.assertTrue(loginError.isDisplayed());
         return this;
     }
+
+    public SignupLoginPage verifyErrorEmailAddressAlreadyExist() {
+        WebElement registerError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Email Address already exist!']")));
+        Assert.assertTrue(registerError.isDisplayed());
+        return this;
+    }
 }
