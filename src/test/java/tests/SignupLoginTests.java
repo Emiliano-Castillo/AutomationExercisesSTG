@@ -7,11 +7,12 @@ public class SignupLoginTests extends BaseTest{
 
     SignupLoginPage signupLoginPage;
 
-    @Test
+    @Test(priority = 1)
     public void registerUser () {
         signupLoginPage = new SignupLoginPage(driver);
 
-        signupLoginPage.clickSignupBtn()
+        signupLoginPage.verifyHomePage()
+                .clickSignupBtn()
                        .verifyNewUserSignupIsVisible()
                 //Register with name and email
                        .sendKeysNameInput("Emiliano")
@@ -44,13 +45,39 @@ public class SignupLoginTests extends BaseTest{
                        .clickCreateBtn()
                        .verifyAccountCreated()
                        .clickContinueBtn()
-                       .verifyLoggedInAsUserName()
-                //Login
-                       .clickSignupBtn()
-                       .loginWithCorrectCredentials()
-                //Delete account
-                        .clickDeleteBtn()
-                        .verifyAccountDeleted()
-                        .clickContinueBtn();
+                .verifyLoggedInAsUserName();
+//                //Login
+//                       .clickSignupBtn()
+//                       .loginWithCorrectCredentials()
+//                //Delete account
+//                        .clickDeleteBtn()
+//                        .verifyAccountDeleted()
+//                        .clickContinueBtn();
+    }
+
+    @Test(priority = 2)
+    public void loginWithCorrectEmailAndPassword() {
+        signupLoginPage = new SignupLoginPage(driver);
+
+        signupLoginPage.verifyHomePage();
+        signupLoginPage.clickSignupBtn();
+        signupLoginPage.verifyNewUserSignupIsVisible();
+        signupLoginPage.clickSignupBtn();
+        signupLoginPage.verifyLoginToYourAccount();
+        signupLoginPage.loginWithCorrectCredentials();
+        signupLoginPage.verifyLoggedInAsUserName();
+        signupLoginPage.clickDeleteBtn();
+        signupLoginPage.verifyAccountDeleted();
+    }
+
+    @Test(priority = 3)
+    public void loginWithIncorrectEmailAndPassword() {
+        signupLoginPage = new SignupLoginPage(driver);
+
+        signupLoginPage.verifyHomePage()
+                .clickSignupBtn()
+                .verifyLoginToYourAccount()
+                .loginWithIncorrectCredentials()
+                .verifyIncorrectEmailAndPasswordError();
     }
 }

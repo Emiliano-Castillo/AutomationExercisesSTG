@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -43,7 +42,6 @@ public class SignupLoginPage extends BasePage{
     private final By formSubmit = By.cssSelector("[data-qa='create-account']");
     private final By formContinueBtn = By.cssSelector(".btn-primary");
     private final By clickOnDeleteBtn = By.cssSelector(".fa-trash-o");
-//    private final By clickOnContinueBtn = By.ByCssSelector("");
 
     //Signup info methods
     public SignupLoginPage clickSignupBtn () {
@@ -167,7 +165,8 @@ public class SignupLoginPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(formContinueBtn)).click();
         return this;
     }
-    //Login
+
+    //Login successfully
     public SignupLoginPage loginWithCorrectCredentials () {
         enterEmail("emiliano.castillo@testpro.io");
         enterPassword("ABC123");
@@ -179,11 +178,20 @@ public class SignupLoginPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDeleteBtn)).click();
         return this;
     }
-//    public void clickContinueEnd () {
-//        wait.until(ExpectedConditions.elementToBeClickable(clickOnContinueBtn)).click();
-//    }
+
+    //Login with incorrect email and password
+    public SignupLoginPage loginWithIncorrectCredentials() {
+        enterEmail("incorrect@testpro.io");
+        enterPassword("ABC1234");
+        clickLoginBtn();
+        return this;
+    }
 
     //Assertions
+    public SignupLoginPage verifyHomePage() {
+        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
+        return this;
+    }
     public SignupLoginPage verifyNewUserSignupIsVisible () {
         Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/login");
         return this;
@@ -205,6 +213,18 @@ public class SignupLoginPage extends BasePage{
     public SignupLoginPage verifyAccountDeleted () {
         WebElement accountDeleted = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Account Deleted!']")));
         Assert.assertTrue(accountDeleted.isDisplayed());
+        return this;
+    }
+
+    public SignupLoginPage verifyLoginToYourAccount() {
+        WebElement loginTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Login to your account']")));
+        Assert.assertTrue(loginTitle.isDisplayed());
+        return this;
+    }
+
+    public SignupLoginPage verifyIncorrectEmailAndPasswordError() {
+        WebElement loginError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Your email or password is incorrect!']")));
+        Assert.assertTrue(loginError.isDisplayed());
         return this;
     }
 }
