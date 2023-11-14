@@ -42,6 +42,7 @@ public class SignupLoginPage extends BasePage{
     private final By formSubmit = By.cssSelector("[data-qa='create-account']");
     private final By formContinueBtn = By.cssSelector(".btn-primary");
     private final By clickOnDeleteBtn = By.cssSelector(".fa-trash-o");
+    private final By clickLogoutBtn = By.cssSelector(".fa-lock");
 
     //Signup info methods
     public SignupLoginPage clickSignupBtn () {
@@ -173,6 +174,7 @@ public class SignupLoginPage extends BasePage{
         clickLoginBtn();
         return this;
     }
+
     //Delete account
     public SignupLoginPage clickDeleteBtn () {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDeleteBtn)).click();
@@ -184,6 +186,22 @@ public class SignupLoginPage extends BasePage{
         enterEmail("incorrect@testpro.io");
         enterPassword("ABC1234");
         clickLoginBtn();
+        return this;
+    }
+
+    //Logout
+    public SignupLoginPage logout() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickLogoutBtn)).click();
+        return this;
+    }
+
+    //Login and Delete account
+    public SignupLoginPage signinAndDeleteAccount() {
+        clickSignupBtn();
+        loginWithCorrectCredentials();
+        clickDeleteBtn();
+        verifyAccountDeleted();
+        clickContinueBtn();
         return this;
     }
 
@@ -215,13 +233,11 @@ public class SignupLoginPage extends BasePage{
         Assert.assertTrue(accountDeleted.isDisplayed());
         return this;
     }
-
     public SignupLoginPage verifyLoginToYourAccount() {
         WebElement loginTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Login to your account']")));
         Assert.assertTrue(loginTitle.isDisplayed());
         return this;
     }
-
     public SignupLoginPage verifyIncorrectEmailAndPasswordError() {
         WebElement loginError = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Your email or password is incorrect!']")));
         Assert.assertTrue(loginError.isDisplayed());

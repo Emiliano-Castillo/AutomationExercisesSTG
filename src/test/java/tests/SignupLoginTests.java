@@ -7,7 +7,7 @@ public class SignupLoginTests extends BaseTest{
 
     SignupLoginPage signupLoginPage;
 
-    @Test(priority = 1)
+    @Test(priority = 1, enabled = true)
     public void registerUser () {
         signupLoginPage = new SignupLoginPage(driver);
 
@@ -55,7 +55,7 @@ public class SignupLoginTests extends BaseTest{
 //                        .clickContinueBtn();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, enabled = true)
     public void loginWithCorrectEmailAndPassword() {
         signupLoginPage = new SignupLoginPage(driver);
 
@@ -66,11 +66,11 @@ public class SignupLoginTests extends BaseTest{
         signupLoginPage.verifyLoginToYourAccount();
         signupLoginPage.loginWithCorrectCredentials();
         signupLoginPage.verifyLoggedInAsUserName();
-        signupLoginPage.clickDeleteBtn();
-        signupLoginPage.verifyAccountDeleted();
+//        signupLoginPage.clickDeleteBtn();
+//        signupLoginPage.verifyAccountDeleted();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, enabled = true)
     public void loginWithIncorrectEmailAndPassword() {
         signupLoginPage = new SignupLoginPage(driver);
 
@@ -79,5 +79,25 @@ public class SignupLoginTests extends BaseTest{
                 .verifyLoginToYourAccount()
                 .loginWithIncorrectCredentials()
                 .verifyIncorrectEmailAndPasswordError();
+    }
+
+    @Test(priority = 4, enabled = true)
+    public void logoutSuccessful() {
+        signupLoginPage = new SignupLoginPage(driver);
+
+        signupLoginPage.verifyHomePage()
+                .clickSignupBtn()
+                .verifyLoginToYourAccount()
+                .loginWithCorrectCredentials()
+                .verifyLoggedInAsUserName()
+                .logout()
+                .verifyNewUserSignupIsVisible();
+    }
+
+    @Test(priority = 5, enabled = true)
+    public void loginDel() {
+        signupLoginPage = new SignupLoginPage(driver);
+
+        signupLoginPage.signinAndDeleteAccount();
     }
 }
