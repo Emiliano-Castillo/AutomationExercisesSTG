@@ -59,15 +59,15 @@ public class SignupLoginTests extends BaseTest{
     public void loginWithCorrectEmailAndPassword() {
         signupLoginPage = new SignupLoginPage(driver);
 
-        signupLoginPage.verifyHomePage();
-        signupLoginPage.clickSignupBtn();
-        signupLoginPage.verifyNewUserSignupIsVisible();
-        signupLoginPage.clickSignupBtn();
-        signupLoginPage.verifyLoginToYourAccount();
-        signupLoginPage.loginWithCorrectCredentials();
-        signupLoginPage.verifyLoggedInAsUserName();
-//        signupLoginPage.clickDeleteBtn();
-//        signupLoginPage.verifyAccountDeleted();
+        signupLoginPage.verifyHomePage()
+                .clickSignupBtn()
+                .verifyNewUserSignupIsVisible()
+                .clickSignupBtn()
+                .verifyLoginToYourAccount()
+                .loginWithCorrectCredentials()
+                .verifyLoggedInAsUserName();
+//                     .clickDeleteBtn()
+//                     .verifyAccountDeleted();
     }
 
     @Test(priority = 3, enabled = true)
@@ -95,6 +95,19 @@ public class SignupLoginTests extends BaseTest{
     }
 
     @Test(priority = 5, enabled = true)
+    public void registerUserWithExistingEmail() {
+        signupLoginPage = new SignupLoginPage(driver);
+
+        signupLoginPage.verifyHomePage()
+                .clickSignupBtn()
+                .verifyNewUserSignupIsVisible()
+                .sendKeysNameInput("Emiliano")
+                .sendKeysEmailInput("emiliano.castillo@testpro.io")
+                .submitSignupBtn()
+                .verifyErrorEmailAddressAlreadyExist();
+    }
+
+    @Test(priority = 6, enabled = true)
     public void loginDel() {
         signupLoginPage = new SignupLoginPage(driver);
 
