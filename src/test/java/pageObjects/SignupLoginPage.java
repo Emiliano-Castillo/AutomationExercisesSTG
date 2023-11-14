@@ -44,7 +44,7 @@ public class SignupLoginPage extends BasePage{
     private final By clickOnDeleteBtn = By.cssSelector(".fa-trash-o");
     private final By clickLogoutBtn = By.cssSelector(".fa-lock");
 
-    //Signup info methods
+    //Signup-Login Methods
     public SignupLoginPage clickSignupBtn () {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnLockIcon)).click();
         return this;
@@ -62,7 +62,7 @@ public class SignupLoginPage extends BasePage{
         return this;
     }
 
-    //Signup form methods
+    //Signup form Methods
     public SignupLoginPage genderSelect () {
         wait.until(ExpectedConditions.visibilityOfElementLocated(selectGender)).click();
         return this;
@@ -206,10 +206,6 @@ public class SignupLoginPage extends BasePage{
     }
 
     //Assertions
-    public SignupLoginPage verifyHomePage() {
-        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
-        return this;
-    }
     public SignupLoginPage verifyNewUserSignupIsVisible () {
         Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/login");
         return this;

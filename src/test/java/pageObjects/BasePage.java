@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -35,5 +36,11 @@ public class BasePage {
     }
     public void clickLoginBtn (){
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginBtn)).click();
+    }
+
+    //Helper Assertions
+    public BasePage verifyHomePage() {
+        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
+        return this;
     }
 }
