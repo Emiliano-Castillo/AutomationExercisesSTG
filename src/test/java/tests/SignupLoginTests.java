@@ -6,8 +6,8 @@ import pageObjects.SignupLoginPage;
 
 public class SignupLoginTests extends BaseTest{
 
-    SignupLoginPage signupLoginPage;
     BasePage basePage;
+    SignupLoginPage signupLoginPage;
 
     @Test(priority = 1, enabled = true, description = "Test registration of a new user")
     public void registerUser () {

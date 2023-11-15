@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 5 Complete">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ContactPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ContactTests.java" afterDir="false" />
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 6 Complete">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pageObjects/TestCasesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TestCasesPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/SignupLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/SignupLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ContactPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SignupLoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SignupLoginTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestNG.xml" afterDir="false" />
     </list>
@@ -49,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case5-RegisiterUser-With-Existing-Email" />
+        <entry key="$PROJECT_DIR$" value="Test-Case6-ContactUs-Form" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +69,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case6-ContactUs-Form",
+    "git-widget-placeholder": "Test-Case7-TestCases-Page",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -88,31 +86,7 @@
       <recent name="$PROJECT_DIR$/src/test/extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactTests.contactUsForm">
-    <configuration name="ContactTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.ContactTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.TestCasesPageTests.openTestCasesTab">
     <configuration name="ContactTests.contactUsForm" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -161,7 +135,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SignupLoginTests.loginDel" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestCasesPageTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +148,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.SignupLoginTests.loginDel&quot;" />
+            <option value="&quot;tests.TestCasesPageTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,7 +159,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SignupLoginTests.registerUserWithExistingEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestCasesPageTests.openTestCases" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -198,7 +172,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.SignupLoginTests.registerUserWithExistingEmail&quot;" />
+            <option value="&quot;tests.TestCasesPageTests.openTestCases&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestCasesPageTests.openTestCasesTab" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.TestCasesPageTests.openTestCasesTab&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ContactTests.contactUsForm" />
-        <item itemvalue="Gradle.ContactTests" />
+        <item itemvalue="Gradle.TestCasesPageTests.openTestCasesTab" />
+        <item itemvalue="Gradle.TestCasesPageTests" />
         <item itemvalue="Gradle.SignupLoginTests" />
-        <item itemvalue="Gradle.SignupLoginTests.loginDel" />
-        <item itemvalue="Gradle.SignupLoginTests.registerUserWithExistingEmail" />
+        <item itemvalue="Gradle.TestCasesPageTests.openTestCases" />
+        <item itemvalue="Gradle.ContactTests.contactUsForm" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699982683186</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Test Case 6 Complete">
+      <option name="closed" value="true" />
+      <created>1699996255075</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699996255075</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,7 +296,8 @@
     <MESSAGE value="Test Case 2 &amp; 3 Complete" />
     <MESSAGE value="Test Case 4 Complete" />
     <MESSAGE value="Test Case 5 Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 5 Complete" />
+    <MESSAGE value="Test Case 6 Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 6 Complete" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
