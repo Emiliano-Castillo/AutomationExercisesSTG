@@ -28,7 +28,6 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addExtensions(new File("/Users/emiliano/Projects/AutomationExercisesSTG/src/Extensions/Ublock.crx"));
-
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
