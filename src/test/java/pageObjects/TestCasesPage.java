@@ -7,11 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class TestCasesPage extends BasePage {
-    private final By clickOnTestCasesBtn = By.cssSelector(".fa-list");
 
     public TestCasesPage(WebDriver driver) {
         super(driver);
     }
+
+    private final By clickOnTestCasesBtn = By.cssSelector(".fa-list");
 
     //TestCases Page Methods
     public TestCasesPage clickTestCases() {
