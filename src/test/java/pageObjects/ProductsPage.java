@@ -8,11 +8,14 @@ import org.testng.Assert;
 
 public class ProductsPage extends BasePage {
 
-    private final By clickOnProductsBtn = By.cssSelector(".card_travel");
-    private final By clickOnViewProductsBtn = By.cssSelector("a[href='/product_details/1']");
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
+
+    private final By clickOnProductsBtn = By.cssSelector(".card_travel");
+    private final By clickOnViewProductsBtn = By.cssSelector("a[href='/product_details/1']");
+    private final By searchInputField = By.cssSelector("input[type='text']");
+    private final By clickOnMagnifyingGlass = By.cssSelector("button[type='button']");
 
     //Product Page Methods
     public ProductsPage clickProductsBtn() {
@@ -26,17 +29,22 @@ public class ProductsPage extends BasePage {
         return this;
     }
 
+    public ProductsPage searchFieldInput(String productName) {
+        WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(searchInputField));
+        search.clear();
+        search.sendKeys(productName);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnMagnifyingGlass)).click();
+        return this;
+    }
+
     //Assertions
     public ProductsPage verifyProductsPage() {
-        WebElement titleAllProduts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()= 'All Products']")));
-        Assert.assertTrue(titleAllProduts.isDisplayed());
-//        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/products");
+        WebElement titleAllProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()= 'All Products']")));
+        Assert.assertTrue(titleAllProducts.isDisplayed());
         return this;
     }
 
     public ProductsPage verifyFirstProductIsVisible() {
-//        WebElement titleBlue = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Blue Top']")));
-////        Assert.assertTrue(titleBlue.isDisplayed());
         Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/product_details/1");
         return this;
     }
@@ -59,6 +67,24 @@ public class ProductsPage extends BasePage {
 
         WebElement brand = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Brand:']")));
         Assert.assertTrue(brand.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifySearchedProductIsVisible() {
+        WebElement specificProduct = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Searched Products']")));
+        Assert.assertTrue(specificProduct.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyAllProductsForJeansSearchAreVisible() {
+        WebElement softStretchJeans = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Soft Stretch Jeans']")));
+        Assert.assertTrue(softStretchJeans.isDisplayed());
+
+        WebElement regularFitStraightJeans = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Regular Fit Straight Jeans']")));
+        Assert.assertTrue(regularFitStraightJeans.isDisplayed());
+
+        WebElement gruntBlueSlimFitJeans = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Grunt Blue Slim Fit Jeans']")));
+        Assert.assertTrue(gruntBlueSlimFitJeans.isDisplayed());
         return this;
     }
 }
