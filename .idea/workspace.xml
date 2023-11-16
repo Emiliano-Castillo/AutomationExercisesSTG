@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 9 SearchProduct Complete">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" afterDir="false" />
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 10 Subscription HomePage Complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case9-Search-Product" />
+        <entry key="$PROJECT_DIR$" value="Test-Case10-Subscription" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case10-Subscription",
+    "git-widget-placeholder": "Test-Case11-Subscription-InCart",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -134,7 +134,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductsTests.verifyProductsAndDetails" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubscriptionFooterTests.cartsSubscriptions" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -147,7 +147,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.ProductsTests.verifyProductsAndDetails&quot;" />
+            <option value="&quot;tests.SubscriptionFooterTests.cartsSubscriptions&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,7 +158,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SignupLoginTests.registerUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubscriptionFooterTests.scroll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -171,7 +171,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.SignupLoginTests.registerUser&quot;" />
+            <option value="&quot;tests.SubscriptionFooterTests.scroll&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -209,10 +209,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.SubscriptionFooterTests.scrollDownPageEmailInputSubscription" />
+        <item itemvalue="Gradle.SubscriptionFooterTests.cartsSubscriptions" />
+        <item itemvalue="Gradle.SubscriptionFooterTests.scroll" />
         <item itemvalue="Gradle.ProductsTests" />
         <item itemvalue="Gradle.ProductsTests.searchProduct" />
-        <item itemvalue="Gradle.ProductsTests.verifyProductsAndDetails" />
-        <item itemvalue="Gradle.SignupLoginTests.registerUser" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700087552168</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test Case 10 Subscription HomePage Complete">
+      <option name="closed" value="true" />
+      <created>1700094290312</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700094290312</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,7 +331,8 @@
     <MESSAGE value="Test Case 6 Complete. For this testcase theres a bug when one trys to click the Test Cases Btn. Very inconsistent when trying to perform a simple click. Only worked well when adding actions.doubleClick." />
     <MESSAGE value="Test Case 8 ProductsPage Complete" />
     <MESSAGE value="Test Case 9 SearchProduct Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 9 SearchProduct Complete" />
+    <MESSAGE value="Test Case 10 Subscription HomePage Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 10 Subscription HomePage Complete" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
