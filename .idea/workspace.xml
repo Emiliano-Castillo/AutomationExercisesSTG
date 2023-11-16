@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 8 ProductsPage Complete">
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 9 SearchProduct Complete">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ProductsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProductsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ProductsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestNG.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +43,10 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case8-All-Products-Page" />
+        <entry key="$PROJECT_DIR$" value="Test-Case9-Search-Product" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case9-Search-Product",
+    "git-widget-placeholder": "Test-Case10-Subscription",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -83,7 +85,7 @@
       <recent name="$PROJECT_DIR$/src/test/extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ProductsTests">
+  <component name="RunManager" selected="Gradle.SubscriptionFooterTests.scrollDownPageEmailInputSubscription">
     <configuration name="ProductsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -180,7 +182,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestCasesPageTests.openTestCasesTab" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubscriptionFooterTests.scrollDownPageEmailInputSubscription" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +195,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.TestCasesPageTests.openTestCasesTab&quot;" />
+            <option value="&quot;tests.SubscriptionFooterTests.scrollDownPageEmailInputSubscription&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SubscriptionFooterTests.scrollDownPageEmailInputSubscription" />
         <item itemvalue="Gradle.ProductsTests" />
         <item itemvalue="Gradle.ProductsTests.searchProduct" />
         <item itemvalue="Gradle.ProductsTests.verifyProductsAndDetails" />
         <item itemvalue="Gradle.SignupLoginTests.registerUser" />
-        <item itemvalue="Gradle.TestCasesPageTests.openTestCasesTab" />
       </list>
     </recent_temporary>
   </component>
@@ -287,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700084297881</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Test Case 9 SearchProduct Complete">
+      <option name="closed" value="true" />
+      <created>1700087552167</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700087552168</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,7 +322,8 @@
     <MESSAGE value="Test Case 6 Complete" />
     <MESSAGE value="Test Case 6 Complete. For this testcase theres a bug when one trys to click the Test Cases Btn. Very inconsistent when trying to perform a simple click. Only worked well when adding actions.doubleClick." />
     <MESSAGE value="Test Case 8 ProductsPage Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 8 ProductsPage Complete" />
+    <MESSAGE value="Test Case 9 SearchProduct Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 9 SearchProduct Complete" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
