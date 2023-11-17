@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 12 Subscription inCart&#10;Complete">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CartTests.java" afterDir="false" />
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 12 Subscription Add products to cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ProductsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CartTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CartTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +45,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case10-Subscription" />
+        <entry key="$PROJECT_DIR$" value="Test-Case12-Add-Products-To-Cart" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +67,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case11-Subscription-InCart",
+    "git-widget-placeholder": "Test-Case13-Product-Quantity-In-Cart",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -88,7 +84,7 @@
       <recent name="$PROJECT_DIR$/src/test/extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CartTests.addProductsToCart">
+  <component name="RunManager" selected="Gradle.CartTests.verifyingProductQuantityInCart">
     <configuration name="CartTests.addProductsToCart" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -113,7 +109,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductsTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CartTests.verifyingProductQuantityInCart" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +122,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.ProductsTests&quot;" />
+            <option value="&quot;tests.CartTests.verifyingProductQuantityInCart&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CartTests.verifyingProductQuantityInCart" />
         <item itemvalue="Gradle.CartTests.addProductsToCart" />
         <item itemvalue="Gradle.SubscriptionFooterTests.scrollDownPageEmailInputSubscription" />
         <item itemvalue="Gradle.SubscriptionFooterTests.cartsSubscriptions" />
         <item itemvalue="Gradle.SubscriptionFooterTests.scroll" />
-        <item itemvalue="Gradle.ProductsTests" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700147315787</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Test Case 12 Subscription Add products to cart">
+      <option name="closed" value="true" />
+      <created>1700181009742</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700181009742</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -344,7 +348,8 @@
     <MESSAGE value="Test Case 9 SearchProduct Complete" />
     <MESSAGE value="Test Case 10 Subscription HomePage Complete" />
     <MESSAGE value="Test Case 12 Subscription inCart&#10;Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 12 Subscription inCart&#10;Complete" />
+    <MESSAGE value="Test Case 12 Subscription Add products to cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 12 Subscription Add products to cart" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
