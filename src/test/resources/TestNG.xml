@@ -10,6 +10,7 @@
             <class name="tests.TestCasesPageTests"/>
             <class name="tests.ProductsTests"/>
             <class name="tests.SubscriptionFooterTests"/>
+            <class name="tests.CartTests"/>
         </classes>
     </test>
 </suite>

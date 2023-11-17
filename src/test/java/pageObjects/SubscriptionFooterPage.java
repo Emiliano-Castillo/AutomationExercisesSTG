@@ -16,7 +16,6 @@ public class SubscriptionFooterPage extends BasePage {
     private final By emailInput = By.cssSelector("input[type='email']");
     private final By clickOnSubmitBtn = By.cssSelector("button[type='submit']");
     private final By successMessage = By.xpath("//*[text()='You have been successfully subscribed!']");
-    private final By cartBtn = By.cssSelector(".fa.fa-shopping-cart");
 
     //Subscriptions Methods
     public SubscriptionFooterPage enterEmailSubField(String email) {
@@ -26,11 +25,6 @@ public class SubscriptionFooterPage extends BasePage {
 
         WebElement clickSubmit = wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnSubmitBtn));
         clickSubmit.click();
-        return this;
-    }
-
-    public SubscriptionFooterPage clickCartBtn() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(cartBtn)).click();
         return this;
     }
 

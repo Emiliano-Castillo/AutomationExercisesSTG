@@ -12,10 +12,11 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
 
-    private final By clickOnProductsBtn = By.cssSelector(".card_travel");
     private final By clickOnViewProductsBtn = By.cssSelector("a[href='/product_details/1']");
     private final By searchInputField = By.cssSelector("input[type='text']");
     private final By clickOnMagnifyingGlass = By.cssSelector("button[type='button']");
+    private final By clickOnProductsBtn = By.cssSelector(".card_travel");
+
 
     //Product Page Methods
     public ProductsPage clickProductsBtn() {
@@ -34,6 +35,27 @@ public class ProductsPage extends BasePage {
         search.clear();
         search.sendKeys(productName);
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnMagnifyingGlass)).click();
+        return this;
+    }
+
+    private final By moveToBlueTop = By.xpath("//*[text() = 'Blue Top']");
+    private final By moveToTshirt = By.xpath("//*[text() = 'Men Tshirt']");
+    private final By clickAddPOneBtn = By.cssSelector(".product-overlay a[data-product-id='1'].add-to-cart");
+    private final By clickAddPTwoBtn = By.cssSelector(".product-overlay a[data-product-id='2'].add-to-cart");
+
+    public ProductsPage hoverOverProductClickAdd() {
+        WebElement moveToBlueTopEl = wait.until(ExpectedConditions.visibilityOfElementLocated(moveToBlueTop));
+        actions.moveToElement(moveToBlueTopEl).perform();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickAddPOneBtn)).click();
+        return this;
+    }
+
+    public ProductsPage hoverOverSecondProductClickAdd() {
+        WebElement moveToBlueTopEl = wait.until(ExpectedConditions.visibilityOfElementLocated(moveToTshirt));
+        actions.moveToElement(moveToBlueTopEl).perform();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickAddPTwoBtn)).click();
         return this;
     }
 
