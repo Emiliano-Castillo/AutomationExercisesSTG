@@ -2,12 +2,14 @@ package tests;
 
 import org.testng.annotations.Test;
 import pageObjects.BasePage;
+import pageObjects.CartPage;
 import pageObjects.SubscriptionFooterPage;
 
 public class SubscriptionFooterTests extends BaseTest {
 
     BasePage basepage;
     SubscriptionFooterPage subscriptionFooterPage;
+    CartPage cartPage;
 
     @Test(priority = 1, enabled = true, description = "Test Subscription Footer")
     public void scrollDownPageEmailInputSubscription() throws InterruptedException {
@@ -25,10 +27,11 @@ public class SubscriptionFooterTests extends BaseTest {
     public void cartsSubscriptions() throws InterruptedException {
         basepage = new BasePage(driver);
         subscriptionFooterPage = new SubscriptionFooterPage(driver);
+        cartPage = new CartPage(driver);
 
         basepage.verifyHomePage();
-        subscriptionFooterPage.clickCartBtn()
-                .scrollDown()
+        cartPage.clickCartBtn();
+        subscriptionFooterPage.scrollDown()
                 .verifyTextSubscription()
                 .enterEmailSubField("emiliano.castillo@testpro.io")
                 .verifySuccessMessage();
