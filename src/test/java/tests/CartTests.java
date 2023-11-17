@@ -11,7 +11,7 @@ public class CartTests extends BaseTest {
     CartPage cartPage;
     ProductsPage productsPage;
 
-    @Test
+    @Test(priority = 1, enabled = true, description = "Test Adding Products to Cart")
     public void addProductsToCart() {
         basePage = new BasePage(driver);
         cartPage = new CartPage(driver);
@@ -25,5 +25,18 @@ public class CartTests extends BaseTest {
         cartPage.clickViewCart()
                 .verifyItemsInCart()
                 .verifyItemsDetails();
+    }
+
+    @Test(priority = 2, enabled = true, description = "Test Product Quantity")
+    public void verifyingProductQuantityInCart() {
+        basePage = new BasePage(driver);
+        cartPage = new CartPage(driver);
+
+        basePage.verifyHomePage();
+        cartPage.clickStylishDressViewProduct()
+                .inputQuantity("4")
+                .addToCart()
+                .clickViewCart()
+                .verifyItemQuantity();
     }
 }

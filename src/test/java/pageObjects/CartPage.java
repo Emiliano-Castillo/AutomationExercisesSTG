@@ -7,6 +7,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class CartPage extends BasePage {
+
+    public CartPage(WebDriver driver) {
+        super(driver);
+    }
+
     private final By cartBtn = By.cssSelector(".fa.fa-shopping-cart");
     private final By clickContinueShopping = By.cssSelector(".btn.btn-success.close-modal");
     private final By clickViewCartBtn = By.xpath("//*[text()='View Cart']");
@@ -15,22 +20,40 @@ public class CartPage extends BasePage {
     private final By firstItemsInCart = By.cssSelector("#product-1 .cart_price");
     private final By cartquantity = By.cssSelector("#product-1 .disabled");
     private final By totalPriceItem = By.cssSelector("#product-1 .cart_total_price");
-    public CartPage(WebDriver driver) {
-        super(driver);
-    }
+    private final By viewBtnStylishDress = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > div:nth-child(6) > div > div.choose > ul > li > a");
+    private final By inputQ = By.cssSelector("#quantity");
+    private final By addToCartBtn = By.cssSelector("button[type='button']");
 
     public CartPage clickCartBtn() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cartBtn)).click();
         return this;
     }
-
     public CartPage clickContinue() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickContinueShopping)).click();
         return this;
     }
-
     public CartPage clickViewCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickViewCartBtn)).click();
+        return this;
+    }
+
+    public CartPage clickStylishDressViewProduct() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(viewBtnStylishDress)).click();
+        return this;
+    }
+
+    public CartPage inputQuantity(String number) {
+        WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(inputQ));
+        input.click();
+        input.clear();
+        input.sendKeys(String.valueOf(number));
+//        input.sendKeys(Keys.chord(Keys.TAB, Keys.ENTER));
+
+        return this;
+    }
+
+    public CartPage addToCart() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(addToCartBtn)).click();
         return this;
     }
 
@@ -58,6 +81,12 @@ public class CartPage extends BasePage {
 
         WebElement totalPrice = wait.until(ExpectedConditions.visibilityOfElementLocated(totalPriceItem));
         Assert.assertTrue(totalPrice.isDisplayed());
+        return this;
+    }
+
+    public CartPage verifyItemQuantity() {
+        int quantity = Integer.parseInt(driver.findElement(By.cssSelector("#product-4 .disabled")).getText());
+        Assert.assertTrue(quantity == 4);
         return this;
     }
 }
