@@ -48,7 +48,6 @@ public class CartPage extends BasePage {
         input.clear();
         input.sendKeys(String.valueOf(number));
 //        input.sendKeys(Keys.chord(Keys.TAB, Keys.ENTER));
-
         return this;
     }
 

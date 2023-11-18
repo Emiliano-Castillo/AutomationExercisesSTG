@@ -39,4 +39,6 @@ public class CartTests extends BaseTest {
                 .clickViewCart()
                 .verifyItemQuantity();
     }
+
+
 }
