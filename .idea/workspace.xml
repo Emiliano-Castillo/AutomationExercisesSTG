@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 15 Place an order and register before checkout">
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 16 Place an order and Login before checkout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CartTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CartTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +46,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case15-PlaceOrder-RegisterBeforeCheckout" />
+        <entry key="$PROJECT_DIR$" value="Test-Case16-PlaceOrder-LoginBeforeCheckout" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case16-PlaceOrder-LoginBeforeCheckout",
+    "git-widget-placeholder": "Test-Case17-Remove-Products-From-Cart",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -83,8 +85,8 @@
       <recent name="$PROJECT_DIR$/src/test/extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CheckoutTests.registerLoginBeforeCheckout">
-    <configuration name="CartTests.verifyingProductQuantityInCart" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.CartTests.RemovingProductsFromCart">
+    <configuration name="CartTests.RemovingProductsFromCart" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +99,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.CartTests.verifyingProductQuantityInCart&quot;" />
+            <option value="&quot;tests.CartTests.RemovingProductsFromCart&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CartTests.RemovingProductsFromCart" />
         <item itemvalue="Gradle.CheckoutTests.registerLoginBeforeCheckout" />
         <item itemvalue="Gradle.CheckoutTests.registerBeforeCheckout" />
         <item itemvalue="Gradle.CheckoutTests" />
         <item itemvalue="Gradle.CheckoutTests.registerWhileAtCheckout" />
-        <item itemvalue="Gradle.CartTests.verifyingProductQuantityInCart" />
       </list>
     </recent_temporary>
   </component>
@@ -343,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700333931931</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Test Case 16 Place an order and Login before checkout">
+      <option name="closed" value="true" />
+      <created>1700335066140</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700335066140</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,7 +385,8 @@
     <MESSAGE value="Test Case 13 update product quantity to cart." />
     <MESSAGE value="Test Case 14 Place an order and register while at checkout" />
     <MESSAGE value="Test Case 15 Place an order and register before checkout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 15 Place an order and register before checkout" />
+    <MESSAGE value="Test Case 16 Place an order and Login before checkout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 16 Place an order and Login before checkout" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

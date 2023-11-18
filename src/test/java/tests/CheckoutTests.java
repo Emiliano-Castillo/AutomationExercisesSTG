@@ -191,8 +191,9 @@ public class CheckoutTests extends BaseTest {
                 .clickSignupBtn()
                 .loginWithCorrectCredentials()
                 .verifyLoggedInAsUserName();
-        productsPage.hoverOverProductClickAdd()
-                .hoverOverThirdProductClickAdd();
+        productsPage.hoverOverProductClickAdd();
+        cartPage.clickContinue();
+        productsPage.hoverOverThirdProductClickAdd();
         cartPage.clickCartBtn()
                 .verifyCartPage();
         checkoutPage.proceedToCheckout()
