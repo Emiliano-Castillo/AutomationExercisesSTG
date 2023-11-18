@@ -84,4 +84,66 @@ public class CheckoutTests extends BaseTest {
                 .clickContinue()
                 .clickOnDelete();
     }
+
+    @Test(priority = 2, enabled = true, description = "Test Place Order: Register Before checkout")
+    public void registerBeforeCheckout() {
+        basePage = new BasePage(driver);
+        signupLoginPage = new SignupLoginPage(driver);
+        cartPage = new CartPage(driver);
+        productsPage = new ProductsPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+
+        basePage.verifyHomePage();
+        signupLoginPage.clickSignupBtn()
+                .sendKeysNameInput("Emiliano")
+                .sendKeysEmailInput("emiliano.castillo@testpro.io")
+                .submitSignupBtn()
+                .verifyEnterAccountInformationIsVisible()
+                //Fill out form
+                .genderSelect()
+                .nameInput("Emiliano")
+                .passwordInput("ABC123")
+                .clickDayDropdown()
+                .selectDay()
+                .clickMonthDropdown()
+                .selectMonth()
+                .clickYearDropdown()
+                .selectYear()
+                .checkboxSignupForOurNewsletter()
+                .checkboxSpecialOffers()
+                .firstNameInput("Emiliano")
+                .lastNameInput("Castillo")
+                .companyNameInput("eacwebdev")
+                .addressNameInput("4109 E tenth ave")
+                .address2NameInput("Milo")
+                .countryDropdown()
+                .selectCountry()
+                .stateNameInput("Colorado")
+                .cityNameInput("Denver")
+                .zipcodeInput("80220")
+                .mobileNumberInput("777 777 7777")
+                .clickCreateBtn()
+                .verifyAccountCreated()
+                .clickContinueBtn()
+                .verifyLoggedInAsUserName();
+        productsPage.hoverOverProductClickAdd()
+                .hoverOverForthProductClickAdd();
+        cartPage.clickCartBtn()
+                .verifyCartPage();
+        checkoutPage.proceedToCheckout()
+                .verifyAddressDetailsAndReviewOrder()
+                .reviewOrderItem1()
+                .reviewOrderItem4()
+                .inputComment("Thanks for the practice")
+                .clickOnPlaceOrderBtn()
+                .enterNameOnCard("emi")
+                .enterCCNumber("0000-0000-0000-0007")
+                .inputCvcNumber("035")
+                .inputExMonth("09")
+                .inputExYear("2040")
+                .clickonPayBtn()
+                .verifyOrderPlaced()
+                .clickContinue()
+                .clickOnDelete();
+    }
 }

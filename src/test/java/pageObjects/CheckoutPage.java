@@ -72,24 +72,20 @@ public class CheckoutPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(inputYear)).sendKeys(number);
         return this;
     }
-
-    //Assertions
-
     public CheckoutPage clickonPayBtn() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickPayBtn)).click();
         return this;
     }
-
     public CheckoutPage clickOnDelete() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickDeleteBtn)).click();
         return this;
     }
-
     public CheckoutPage clickContinue() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnContinue)).click();
         return this;
     }
 
+    //Assertions
     public CheckoutPage verifyAddressDetailsAndReviewOrder() {
 
         WebElement addressD = wait.until(ExpectedConditions.visibilityOfElementLocated(titleAddress));
@@ -117,9 +113,7 @@ public class CheckoutPage extends BasePage {
         Assert.assertTrue(pNumber.equals("777 777 7777"));
         return this;
     }
-
     public CheckoutPage reviewOrderItem1() {
-
         WebElement reviewO = wait.until(ExpectedConditions.visibilityOfElementLocated(reviewTitle));
         Assert.assertTrue(reviewO.isDisplayed());
 
@@ -137,7 +131,6 @@ public class CheckoutPage extends BasePage {
 
         return this;
     }
-
     public CheckoutPage reviewOrderItem2() {
 
         WebElement name = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Men Tshirt']")));
@@ -154,7 +147,6 @@ public class CheckoutPage extends BasePage {
 
         return this;
     }
-
     public CheckoutPage reviewOrderItem3() {
 
         WebElement name = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Sleeveless Dress']")));
@@ -171,7 +163,6 @@ public class CheckoutPage extends BasePage {
 
         return this;
     }
-
     public CheckoutPage reviewOrderItem4() {
 
         WebElement name = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Stylish Dress']")));
@@ -188,7 +179,6 @@ public class CheckoutPage extends BasePage {
 
         return this;
     }
-
     public CheckoutPage reviewOrderItem5() {
 
         WebElement name = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Winter Top']")));
@@ -205,7 +195,6 @@ public class CheckoutPage extends BasePage {
 
         return this;
     }
-
     public CheckoutPage verifyOrderPlaced() {
         WebElement orderPlaced = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Order Placed!']")));
         Assert.assertTrue(orderPlaced.isDisplayed());
