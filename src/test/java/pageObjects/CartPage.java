@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -56,6 +57,18 @@ public class CartPage extends BasePage {
         return this;
     }
 
+    private final By clickOnDeleteBtn = By.cssSelector("#product-1 > td.cart_delete > a");
+
+    public CartPage clickX() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDeleteBtn)).click();
+        return this;
+    }
+
+    //    private final By clickOnDeleteBtn2 = By.cssSelector("#product-2 > td.cart_delete > a");
+//    public CartPage clickX2 () {
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDeleteBtn2)).click();
+//        return this;
+//    }
     //Assertion
     public CartPage verifyCartPage() {
         Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
@@ -86,6 +99,17 @@ public class CartPage extends BasePage {
     public CartPage verifyItemQuantity() {
         int quantity = Integer.parseInt(driver.findElement(By.cssSelector("#product-4 .disabled")).getText());
         Assert.assertTrue(quantity == 4);
+        return this;
+    }
+
+    public CartPage verifyRemovelOfProduct() {
+        try {
+            WebElement removed = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Blue Top']")));
+            wait.until(ExpectedConditions.invisibilityOf(removed));
+            Assert.assertFalse(removed.isDisplayed());
+        } catch (StaleElementReferenceException e) {
+            System.out.println("Caught StaleElementReferenceException: The element is stale.");
+        }
         return this;
     }
 }

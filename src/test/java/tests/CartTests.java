@@ -40,5 +40,19 @@ public class CartTests extends BaseTest {
                 .verifyItemQuantity();
     }
 
+    @Test(priority = 3, enabled = true, description = "Test Removing products from Cart")
+    public void RemovingProductsFromCart() throws InterruptedException {
+        basePage = new BasePage(driver);
+        cartPage = new CartPage(driver);
+        productsPage = new ProductsPage(driver);
 
+        basePage.verifyHomePage();
+        productsPage.hoverOverProductClickAdd();
+        cartPage.clickContinue();
+        productsPage.hoverOverFifthProductClickAdd();
+        cartPage.clickCartBtn()
+                .verifyCartPage()
+                .clickX()
+                .verifyRemovelOfProduct();
+    }
 }
