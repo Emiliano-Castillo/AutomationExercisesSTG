@@ -146,4 +146,69 @@ public class CheckoutTests extends BaseTest {
                 .clickContinue()
                 .clickOnDelete();
     }
+
+    @Test(priority = 3, enabled = true, description = "Test Place Order: Login Before checkout")
+    public void registerLoginBeforeCheckout() {
+        basePage = new BasePage(driver);
+        signupLoginPage = new SignupLoginPage(driver);
+        cartPage = new CartPage(driver);
+        productsPage = new ProductsPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+
+        basePage.verifyHomePage();
+        signupLoginPage.clickSignupBtn()
+                .sendKeysNameInput("Emiliano")
+                .sendKeysEmailInput("emiliano.castillo@testpro.io")
+                .submitSignupBtn()
+                .verifyEnterAccountInformationIsVisible()
+                //Fill out form
+                .genderSelect()
+                .nameInput("Emiliano")
+                .passwordInput("ABC123")
+                .clickDayDropdown()
+                .selectDay()
+                .clickMonthDropdown()
+                .selectMonth()
+                .clickYearDropdown()
+                .selectYear()
+                .checkboxSignupForOurNewsletter()
+                .checkboxSpecialOffers()
+                .firstNameInput("Emiliano")
+                .lastNameInput("Castillo")
+                .companyNameInput("eacwebdev")
+                .addressNameInput("4109 E tenth ave")
+                .address2NameInput("Milo")
+                .countryDropdown()
+                .selectCountry()
+                .stateNameInput("Colorado")
+                .cityNameInput("Denver")
+                .zipcodeInput("80220")
+                .mobileNumberInput("777 777 7777")
+                .clickCreateBtn()
+                .verifyAccountCreated()
+                .clickContinueBtn()
+                .logout()
+                .clickSignupBtn()
+                .loginWithCorrectCredentials()
+                .verifyLoggedInAsUserName();
+        productsPage.hoverOverProductClickAdd()
+                .hoverOverThirdProductClickAdd();
+        cartPage.clickCartBtn()
+                .verifyCartPage();
+        checkoutPage.proceedToCheckout()
+                .verifyAddressDetailsAndReviewOrder()
+                .reviewOrderItem1()
+                .reviewOrderItem3()
+                .inputComment("More Practice, Getting better")
+                .clickOnPlaceOrderBtn()
+                .enterNameOnCard("ems")
+                .enterCCNumber("0234-3423-23423-24234")
+                .inputCvcNumber("987")
+                .inputExMonth("04")
+                .inputExYear("3234")
+                .clickonPayBtn()
+                .verifyOrderPlaced()
+                .clickContinue()
+                .clickOnDelete();
+    }
 }
