@@ -23,7 +23,7 @@ public class ProductsTests extends BaseTest {
     }
 
     @Test(priority = 2, enabled = true, description = "Test Product Search")
-    public void searchProduct() throws InterruptedException {
+    public void searchProduct() {
         basePage = new BasePage(driver);
         productsPage = new ProductsPage(driver);
 
@@ -34,5 +34,18 @@ public class ProductsTests extends BaseTest {
                 .verifySearchedProductIsVisible()
                 .searchFieldInput("Jeans")
                 .verifyAllProductsForJeansSearchAreVisible();
+    }
+
+    @Test(priority = 3, enabled = true, description = "Test View Category Products SideBar")
+    public void categoryProducts() {
+        productsPage = new ProductsPage(driver);
+
+        productsPage.verifyCategoriesIsVisible()
+                .clickWomen()
+                .clickDress()
+                .verifyCategoryPageAndConfirmText()
+                .clickMen()
+                .clickJeans()
+                .verifyCategoryPageJeans();
     }
 }

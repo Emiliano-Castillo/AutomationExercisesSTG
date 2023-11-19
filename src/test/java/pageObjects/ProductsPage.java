@@ -88,6 +88,32 @@ public class ProductsPage extends BasePage {
         return this;
     }
 
+    private final By clickOnWomenBtn = By.cssSelector("#accordian > div:nth-child(1) > div.panel-heading > h4 > a > span > i");
+    private final By clickOnDressBtn = By.xpath("//*[@id=\"Women\"]/div/ul/li[1]/a");
+    private final By clickOnMenBtn = By.cssSelector("#accordian > div:nth-child(2) > div.panel-heading > h4 > a");
+    private final By clickJeansBtn = By.cssSelector("#Men > div > ul > li:nth-child(2) > a");
+
+    public ProductsPage clickWomen() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnWomenBtn)).click();
+        return this;
+    }
+
+    public ProductsPage clickDress() {
+        WebElement dress = wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDressBtn));
+        actions.doubleClick(dress).perform();
+        return this;
+    }
+
+    public ProductsPage clickMen() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnMenBtn)).click();
+        return this;
+    }
+
+    public ProductsPage clickJeans() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickJeansBtn)).click();
+        return this;
+    }
+
     //Assertions
     public ProductsPage verifyProductsPage() {
         WebElement titleAllProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()= 'All Products']")));
@@ -138,4 +164,27 @@ public class ProductsPage extends BasePage {
         Assert.assertTrue(gruntBlueSlimFitJeans.isDisplayed());
         return this;
     }
+
+    public ProductsPage verifyCategoriesIsVisible() {
+        WebElement category = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Category']")));
+        Assert.assertTrue(category.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyCategoryPageAndConfirmText() {
+        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/category_products/1");
+
+        WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Women - Dress Products']")));
+        Assert.assertTrue(title.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyCategoryPageJeans() {
+        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/category_products/6");
+
+        WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Men - Jeans Products']")));
+        Assert.assertTrue(title.isDisplayed());
+        return this;
+    }
+
 }
