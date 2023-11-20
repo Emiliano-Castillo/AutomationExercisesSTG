@@ -121,4 +121,16 @@ public class ProductsTests extends BaseTest {
                 .verifyBlueTopItemInCart();
         signupLoginPage.clickDeleteBtn();
     }
+
+    @Test(priority = 5, enabled = true, description = "Test Adding Products Review")
+    public void productReview() {
+        productsPage = new ProductsPage(driver);
+
+        productsPage.clickProductsBtn()
+                .verifyProductsPage()
+                .clickViewProduct()
+                .verifyWriteYourReviewIsVisible()
+                .enterNameEmailAndReview()
+                .verifySuccessMessage();
+    }
 }

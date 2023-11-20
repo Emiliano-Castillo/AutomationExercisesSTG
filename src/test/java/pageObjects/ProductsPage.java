@@ -124,6 +124,14 @@ public class ProductsPage extends BasePage {
         return this;
     }
 
+    public ProductsPage enterNameEmailAndReview() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#name"))).sendKeys("Emiliano");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#email"))).sendKeys("emiliano.castillo@testpro.io");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[placeholder='Add Review Here!']"))).sendKeys("Great Product. Fits perfect. Give it a 10/10!");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#button-review"))).click();
+        return this;
+    }
+
 
     //Assertions
     public ProductsPage verifyProductsPage() {
@@ -232,4 +240,15 @@ public class ProductsPage extends BasePage {
         return this;
     }
 
+    public ProductsPage verifyWriteYourReviewIsVisible() {
+        WebElement reviewBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()= 'Write Your Review']")));
+        Assert.assertTrue(reviewBox.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifySuccessMessage() {
+        WebElement successM = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#review-section > div > div > span")));
+        Assert.assertTrue(successM.isDisplayed());
+        return this;
+    }
 }
