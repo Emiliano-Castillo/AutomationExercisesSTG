@@ -124,6 +124,7 @@ public class ProductsPage extends BasePage {
         return this;
     }
 
+
     //Assertions
     public ProductsPage verifyProductsPage() {
         WebElement titleAllProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()= 'All Products']")));
@@ -222,6 +223,12 @@ public class ProductsPage extends BasePage {
 
         WebElement gruntJeans = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Grunt Blue Slim Fit Jeans']")));
         Assert.assertTrue(gruntJeans.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyAllProductsForBlueTopSearchAreVisible() {
+        WebElement name = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Blue Top']")));
+        Assert.assertTrue(name.isDisplayed());
         return this;
     }
 
