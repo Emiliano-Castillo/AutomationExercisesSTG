@@ -118,4 +118,10 @@ public class CartPage extends BasePage {
         Assert.assertTrue(blueTop.isDisplayed());
         return this;
     }
+
+    public CartPage verifyWinterTopRecommendedItems() {
+        WebElement winter = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Winter Top']")));
+        Assert.assertTrue(winter.isDisplayed());
+        return this;
+    }
 }

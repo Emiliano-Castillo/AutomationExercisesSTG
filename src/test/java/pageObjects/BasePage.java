@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,9 +39,36 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginBtn)).click();
     }
 
+    private final By recommendedItems = By.cssSelector(".recommended_items .title");
+    private final By clickAddCart = By.cssSelector("#recommended-item-carousel [data-product-id='5']");
+    private final By clickView = By.cssSelector("#cartModal > div > div > div.modal-body > p:nth-child(2)");
+
+    public BasePage scrollDown() {
+        WebElement rItems = wait.until(ExpectedConditions.visibilityOfElementLocated(recommendedItems));
+        actions.scrollToElement(rItems).perform();
+        return this;
+    }
+
+    public BasePage clickAddToCart() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickAddCart)).click();
+        return this;
+    }
+
+    public BasePage clickViewCart() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickView)).click();
+        return this;
+    }
+
     //Helper Assertions
     public BasePage verifyHomePage() {
         Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
         return this;
     }
+
+    public BasePage verifyRecommendedItemsAreVisible() {
+        WebElement items = wait.until(ExpectedConditions.visibilityOfElementLocated(recommendedItems));
+        Assert.assertTrue(items.isDisplayed());
+        return this;
+    }
+
 }

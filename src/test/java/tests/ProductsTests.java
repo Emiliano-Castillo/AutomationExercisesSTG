@@ -133,4 +133,17 @@ public class ProductsTests extends BaseTest {
                 .enterNameEmailAndReview()
                 .verifySuccessMessage();
     }
+
+    @Test(priority = 6, enabled = true, description = "Test recommended product items")
+    public void recommendedSection() {
+        basePage = new BasePage(driver);
+        cartPage = new CartPage(driver);
+
+
+        basePage.scrollDown()
+                .verifyRecommendedItemsAreVisible()
+                .clickAddToCart()
+                .clickViewCart();
+        cartPage.verifyWinterTopRecommendedItems();
+    }
 }
