@@ -114,6 +114,16 @@ public class ProductsPage extends BasePage {
         return this;
     }
 
+    public ProductsPage clickBibaProductBrand() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='/brand_products/Biba']"))).click();
+        return this;
+    }
+
+    public ProductsPage clickPoloProductBrand() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='/brand_products/Polo']"))).click();
+        return this;
+    }
+
     //Assertions
     public ProductsPage verifyProductsPage() {
         WebElement titleAllProducts = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()= 'All Products']")));
@@ -184,6 +194,34 @@ public class ProductsPage extends BasePage {
 
         WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Men - Jeans Products']")));
         Assert.assertTrue(title.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyBrandsAreVisible() {
+        WebElement brands = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Brands']")));
+        Assert.assertTrue(brands.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyBrandPageAndProductsForBiba() {
+        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/brand_products/Biba");
+
+        WebElement mickeyDress = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Blue Cotton Indie Mickey Dress']")));
+        Assert.assertTrue(mickeyDress.isDisplayed());
+
+        WebElement linenSaree = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Rust Red Linen Saree']")));
+        Assert.assertTrue(linenSaree.isDisplayed());
+        return this;
+    }
+
+    public ProductsPage verifyBrandPageAndProductsForPolo() {
+        Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/brand_products/Polo");
+
+        WebElement blueTop = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Blue Top']")));
+        Assert.assertTrue(blueTop.isDisplayed());
+
+        WebElement gruntJeans = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Grunt Blue Slim Fit Jeans']")));
+        Assert.assertTrue(gruntJeans.isDisplayed());
         return this;
     }
 
