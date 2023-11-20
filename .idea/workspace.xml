@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 19 View Brand Products">
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 20 Search Products Verify Cart After Login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ProductsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProductsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ProductsTests.java" afterDir="false" />
     </list>
@@ -46,7 +45,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case19-View-&amp;-Cart-Brand-Products" />
+        <entry key="$PROJECT_DIR$" value="Test-Case20-Search-Product-Verify-Cart-After-Login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,7 +67,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case20-Search-Product-Verify-Cart-After-Login",
+    "git-widget-placeholder": "Test-Case21-Add-Product-Review",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -85,31 +84,7 @@
       <recent name="$PROJECT_DIR$/src/test/extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ProductsTests.searchProductsAndVerifyCartAfterLogin">
-    <configuration name="CartTests.RemovingProductsFromCart" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.CartTests.RemovingProductsFromCart&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.ProductsTests.productReview">
     <configuration name="ProductsTests.categoryProducts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -124,6 +99,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;tests.ProductsTests.categoryProducts&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductsTests.productReview" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.ProductsTests.productReview&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ProductsTests.productReview" />
         <item itemvalue="Gradle.ProductsTests.searchProductsAndVerifyCartAfterLogin" />
         <item itemvalue="Gradle.ProductsTests.viewCartBrandProducts" />
         <item itemvalue="Gradle.ProductsTests.categoryProducts" />
         <item itemvalue="Gradle.ProductsTests.searchProduct" />
-        <item itemvalue="Gradle.CartTests.RemovingProductsFromCart" />
       </list>
     </recent_temporary>
   </component>
@@ -377,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700500712938</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Test Case 20 Search Products Verify Cart After Login">
+      <option name="closed" value="true" />
+      <created>1700502361612</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700502361612</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,7 +420,8 @@
     <MESSAGE value="Test Case 17 Removing Products from a cart" />
     <MESSAGE value="Test Case 18 View Category Products" />
     <MESSAGE value="Test Case 19 View Brand Products" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 19 View Brand Products" />
+    <MESSAGE value="Test Case 20 Search Products Verify Cart After Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 20 Search Products Verify Cart After Login" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
