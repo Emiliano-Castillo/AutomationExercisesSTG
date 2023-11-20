@@ -48,4 +48,16 @@ public class ProductsTests extends BaseTest {
                 .clickJeans()
                 .verifyCategoryPageJeans();
     }
+
+    @Test(priority = 4, enabled = true, description = "Test View And Cart Brand Products")
+    public void viewCartBrandProducts() {
+        productsPage = new ProductsPage(driver);
+
+        productsPage.clickProductsBtn()
+                .verifyBrandsAreVisible()
+                .clickBibaProductBrand()
+                .verifyBrandPageAndProductsForBiba()
+                .clickPoloProductBrand()
+                .verifyBrandPageAndProductsForPolo();
+    }
 }
