@@ -112,4 +112,10 @@ public class CartPage extends BasePage {
         }
         return this;
     }
+
+    public CartPage verifyBlueTopItemInCart() {
+        WebElement blueTop = wait.until(ExpectedConditions.visibilityOfElementLocated(moveToBlueTop));
+        Assert.assertTrue(blueTop.isDisplayed());
+        return this;
+    }
 }
