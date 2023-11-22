@@ -85,6 +85,7 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+
     //Assertions
     public CheckoutPage verifyAddressDetailsAndReviewOrder() {
 

@@ -167,6 +167,34 @@ public class SignupLoginPage extends BasePage{
         return this;
     }
 
+    //Fill out registration form
+    public SignupLoginPage fillOutRegisterForm() {
+        genderSelect();
+        nameInput("Emiliano");
+        passwordInput("ABC123");
+        clickDayDropdown();
+        selectDay();
+        clickMonthDropdown();
+        selectMonth();
+        clickYearDropdown();
+        selectYear();
+        checkboxSignupForOurNewsletter();
+        checkboxSpecialOffers();
+        firstNameInput("Emiliano");
+        lastNameInput("Castillo");
+        companyNameInput("eacwebdev");
+        addressNameInput("4109 E tenth ave");
+        address2NameInput("Milo");
+        countryDropdown();
+        selectCountry();
+        stateNameInput("Colorado");
+        cityNameInput("Denver");
+        zipcodeInput("80220");
+        mobileNumberInput("777 777 7777");
+        clickCreateBtn();
+        return this;
+    }
+
     //Login successfully
     public SignupLoginPage loginWithCorrectCredentials () {
         enterEmail("emiliano.castillo@testpro.io");
