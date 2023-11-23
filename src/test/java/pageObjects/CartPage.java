@@ -48,7 +48,6 @@ public class CartPage extends BasePage {
         input.click();
         input.clear();
         input.sendKeys(String.valueOf(number));
-//        input.sendKeys(Keys.chord(Keys.TAB, Keys.ENTER));
         return this;
     }
 
@@ -64,11 +63,6 @@ public class CartPage extends BasePage {
         return this;
     }
 
-    //    private final By clickOnDeleteBtn2 = By.cssSelector("#product-2 > td.cart_delete > a");
-//    public CartPage clickX2 () {
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDeleteBtn2)).click();
-//        return this;
-//    }
     //Assertion
     public CartPage verifyCartPage() {
         Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");

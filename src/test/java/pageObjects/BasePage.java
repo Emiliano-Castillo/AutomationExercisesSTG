@@ -70,5 +70,4 @@ public class BasePage {
         Assert.assertTrue(items.isDisplayed());
         return this;
     }
-
 }

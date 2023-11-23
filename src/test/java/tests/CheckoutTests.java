@@ -3,6 +3,8 @@ package tests;
 import org.testng.annotations.Test;
 import pageObjects.*;
 
+import java.io.IOException;
+
 public class CheckoutTests extends BaseTest {
     BasePage basePage;
     SignupLoginPage signupLoginPage;
@@ -167,7 +169,7 @@ public class CheckoutTests extends BaseTest {
                 .clickOnDelete();
     }
 
-    @Test(priority = 4, enabled = true, description = "Test verify Addess details in checkout page")
+    @Test(priority = 4, enabled = true, description = "Test verify Address details in checkout page")
     public void verifyAddressDetailsInCheckout() {
         checkoutPage = new CheckoutPage(driver);
         basePage = new BasePage(driver);
@@ -190,6 +192,49 @@ public class CheckoutTests extends BaseTest {
                 .verifyCartPage();
         checkoutPage.proceedToCheckout()
                 .verifyAddressDetailsAndReviewOrder();
-        signupLoginPage.clickDeleteBtn();
+        signupLoginPage.clickDeleteBtn()
+                .verifyAccountDeleted();
+    }
+
+    @Test(priority = 5, enabled = true, description = "Test Download Invoice after Purchase order")
+    public void downloadInvoiceAfterOrder() throws InterruptedException, IOException {
+        signupLoginPage = new SignupLoginPage(driver);
+        productsPage = new ProductsPage(driver);
+        cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+
+        signupLoginPage.verifyHomePage();
+        productsPage.hoverOverProductClickAdd();
+        cartPage.clickContinue();
+        productsPage.hoverOverSecondProductClickAdd();
+        cartPage.clickCartBtn()
+                .verifyCartPage();
+        checkoutPage.proceedToCheckout();
+        checkoutPage.clickRegister();
+        signupLoginPage.sendKeysNameInput("Emiliano")
+                .sendKeysEmailInput("emiliano.castillo@testpro.io")
+                .submitSignupBtn()
+                .fillOutRegisterForm()
+                .verifyAccountCreated()
+                .clickContinueBtn()
+                .verifyLoggedInAsUserName();
+        cartPage.clickCartBtn();
+        checkoutPage.proceedToCheckout();
+        checkoutPage.verifyAddressDetailsAndReviewOrder();
+        checkoutPage.reviewOrderItem1()
+                .reviewOrderItem2()
+                .inputComment("kcisdcskc scsidljs dasjdv sdlkvj lsdvjsld vsjv sld v")
+                .clickOnPlaceOrderBtn()
+                .enterNameOnCard("ems")
+                .enterCCNumber("0234-3423-23423-24234")
+                .inputCvcNumber("987")
+                .inputExMonth("04")
+                .inputExYear("3234")
+                .clickonPayBtn()
+                .verifyOrderPlaced()
+                .clickDownload();
+        checkoutPage.verifyDownloadIsSuccessful();
+        signupLoginPage.clickDeleteBtn()
+                .verifyAccountDeleted();
     }
 }
