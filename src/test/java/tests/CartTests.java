@@ -41,7 +41,7 @@ public class CartTests extends BaseTest {
     }
 
     @Test(priority = 3, enabled = true, description = "Test Removing products from Cart")
-    public void RemovingProductsFromCart() throws InterruptedException {
+    public void RemovingProductsFromCart() {
         basePage = new BasePage(driver);
         cartPage = new CartPage(driver);
         productsPage = new ProductsPage(driver);

@@ -88,29 +88,7 @@ public class ProductsTests extends BaseTest {
                 .submitSignupBtn()
                 .verifyEnterAccountInformationIsVisible()
                 //Fill out form
-                .genderSelect()
-                .nameInput("Emiliano")
-                .passwordInput("ABC123")
-                .clickDayDropdown()
-                .selectDay()
-                .clickMonthDropdown()
-                .selectMonth()
-                .clickYearDropdown()
-                .selectYear()
-                .checkboxSignupForOurNewsletter()
-                .checkboxSpecialOffers()
-                .firstNameInput("Emiliano")
-                .lastNameInput("Castillo")
-                .companyNameInput("eacwebdev")
-                .addressNameInput("4109 E tenth ave")
-                .address2NameInput("Milo")
-                .countryDropdown()
-                .selectCountry()
-                .stateNameInput("Colorado")
-                .cityNameInput("Denver")
-                .zipcodeInput("80220")
-                .mobileNumberInput("777 777 7777")
-                .clickCreateBtn()
+                .fillOutRegisterForm()
                 .verifyAccountCreated()
                 .clickContinueBtn()
                 .verifyLoggedInAsUserName()
@@ -122,7 +100,7 @@ public class ProductsTests extends BaseTest {
         signupLoginPage.clickDeleteBtn();
     }
 
-    @Test(priority = 5, enabled = true, description = "Test Adding Products Review")
+    @Test(priority = 6, enabled = true, description = "Test Adding Products Review")
     public void productReview() {
         productsPage = new ProductsPage(driver);
 
@@ -134,7 +112,7 @@ public class ProductsTests extends BaseTest {
                 .verifySuccessMessage();
     }
 
-    @Test(priority = 6, enabled = true, description = "Test recommended product items")
+    @Test(priority = 7, enabled = true, description = "Test recommended product items")
     public void recommendedSection() {
         basePage = new BasePage(driver);
         cartPage = new CartPage(driver);

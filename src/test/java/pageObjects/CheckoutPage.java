@@ -80,10 +80,7 @@ public class CheckoutPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickPayBtn)).click();
         return this;
     }
-    public CheckoutPage clickOnDelete() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(clickDeleteBtn)).click();
-        return this;
-    }
+
     public CheckoutPage clickContinue() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnContinue)).click();
         return this;
@@ -91,6 +88,18 @@ public class CheckoutPage extends BasePage {
 
     public CheckoutPage clickDownload() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickDownloadBtn)).click();
+        return this;
+    }
+
+    //Fill out payment information
+    public CheckoutPage fillOutPaymentInfo() {
+        enterNameOnCard("Emi");
+        enterCCNumber("0000-0000-0000-0001");
+        inputCvcNumber("777");
+        inputExMonth("07");
+        inputExYear("2037");
+        clickonPayBtn();
+        verifyOrderPlaced();
         return this;
     }
 
