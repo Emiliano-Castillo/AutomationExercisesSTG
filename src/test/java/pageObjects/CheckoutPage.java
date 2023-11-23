@@ -5,10 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import utils.VerifyDownload;
+
+import java.io.IOException;
 
 public class CheckoutPage extends BasePage {
-    public final By clickDeleteBtn = By.cssSelector(".fa-trash-o");
-    public final By clickOnContinue = By.cssSelector("[data-qa='continue-button']");
+    private final By clickDeleteBtn = By.cssSelector(".fa-trash-o");
+    private final By clickOnContinue = By.cssSelector("[data-qa='continue-button']");
     private final By clickRegister_LoginBtn = By.xpath("//*[text() = 'Register / Login']");
     private final By clickProceedToCheckoutBtn = By.cssSelector(".btn-default.check_out");
     private final By comment = By.cssSelector(".form-control");
@@ -22,6 +25,7 @@ public class CheckoutPage extends BasePage {
     private final By titleAddress = By.xpath("//*[text() = 'Address Details']");
     private final By firstN = By.cssSelector("#address_delivery > li.address_firstname.address_lastname");
     private final By reviewTitle = By.xpath("//*[text() = 'Review Your Order']");
+    private final By clickDownloadBtn = By.cssSelector(".btn-default.check_out");
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -85,6 +89,10 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
+    public CheckoutPage clickDownload() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickDownloadBtn)).click();
+        return this;
+    }
 
     //Assertions
     public CheckoutPage verifyAddressDetailsAndReviewOrder() {
@@ -202,6 +210,12 @@ public class CheckoutPage extends BasePage {
 
         WebElement congratulations = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Congratulations! Your order has been confirmed!']")));
         Assert.assertTrue(congratulations.isDisplayed());
+        return this;
+    }
+
+    public CheckoutPage verifyDownloadIsSuccessful() throws IOException {
+        boolean isFileDownloaded = VerifyDownload.isFileDownloaded("invoice", "txt", 5000);
+        Assert.assertTrue(isFileDownloaded, "Verify invoice is downloaded successfully.");
         return this;
     }
 }
