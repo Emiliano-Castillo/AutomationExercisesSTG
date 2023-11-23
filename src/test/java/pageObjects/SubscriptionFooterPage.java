@@ -18,6 +18,7 @@ public class SubscriptionFooterPage extends BasePage {
     private final By successMessage = By.xpath("//*[text()='You have been successfully subscribed!']");
     private final By arrowBtn = By.cssSelector("#scrollUp");
     private final By scrollUpTo = By.cssSelector(".fa-home");
+    private final By scrollDownToFooter = By.cssSelector(".footer-bottom .pull-left");
 
     //Subscriptions Methods
     public SubscriptionFooterPage enterEmailSubField(String email) {
@@ -31,7 +32,7 @@ public class SubscriptionFooterPage extends BasePage {
     }
 
     public SubscriptionFooterPage scrollDown() {
-        WebElement scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(subscriptionText));
+        WebElement scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(scrollDownToFooter));
         actions.scrollToElement(scroll).perform();
         return this;
     }

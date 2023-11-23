@@ -53,15 +53,10 @@ public class CheckoutTests extends BaseTest {
                 .reviewOrderItem5()
                 .inputComment("Thanks for Automating This Site")
                 .clickOnPlaceOrderBtn()
-                .enterNameOnCard("Emi")
-                .enterCCNumber("0000-0000-0000-0001")
-                .inputCvcNumber("777")
-                .inputExMonth("07")
-                .inputExYear("2037")
-                .clickonPayBtn()
-                .verifyOrderPlaced()
-                .clickContinue()
-                .clickOnDelete();
+                .fillOutPaymentInfo()
+                .clickContinue();
+        signupLoginPage.clickDeleteBtn()
+                .verifyAccountDeleted();
     }
 
     @Test(priority = 2, enabled = true, description = "Test Place Order: Register Before checkout")
@@ -82,8 +77,9 @@ public class CheckoutTests extends BaseTest {
                 .verifyAccountCreated()
                 .clickContinueBtn()
                 .verifyLoggedInAsUserName();
-        productsPage.hoverOverProductClickAdd()
-                .hoverOverForthProductClickAdd();
+        productsPage.hoverOverProductClickAdd();
+        cartPage.clickContinue();
+        productsPage.hoverOverForthProductClickAdd();
         cartPage.clickCartBtn()
                 .verifyCartPage();
         checkoutPage.proceedToCheckout()
@@ -92,15 +88,10 @@ public class CheckoutTests extends BaseTest {
                 .reviewOrderItem4()
                 .inputComment("Thanks for the practice")
                 .clickOnPlaceOrderBtn()
-                .enterNameOnCard("emi")
-                .enterCCNumber("0000-0000-0000-0007")
-                .inputCvcNumber("035")
-                .inputExMonth("09")
-                .inputExYear("2040")
-                .clickonPayBtn()
-                .verifyOrderPlaced()
-                .clickContinue()
-                .clickOnDelete();
+                .fillOutPaymentInfo()
+                .clickContinue();
+        signupLoginPage.clickDeleteBtn()
+                .verifyAccountDeleted();
     }
 
     @Test(priority = 3, enabled = true, description = "Test Place Order: Login Before checkout")
@@ -117,30 +108,7 @@ public class CheckoutTests extends BaseTest {
                 .sendKeysEmailInput("emiliano.castillo@testpro.io")
                 .submitSignupBtn()
                 .verifyEnterAccountInformationIsVisible()
-                //Fill out form
-                .genderSelect()
-                .nameInput("Emiliano")
-                .passwordInput("ABC123")
-                .clickDayDropdown()
-                .selectDay()
-                .clickMonthDropdown()
-                .selectMonth()
-                .clickYearDropdown()
-                .selectYear()
-                .checkboxSignupForOurNewsletter()
-                .checkboxSpecialOffers()
-                .firstNameInput("Emiliano")
-                .lastNameInput("Castillo")
-                .companyNameInput("eacwebdev")
-                .addressNameInput("4109 E tenth ave")
-                .address2NameInput("Milo")
-                .countryDropdown()
-                .selectCountry()
-                .stateNameInput("Colorado")
-                .cityNameInput("Denver")
-                .zipcodeInput("80220")
-                .mobileNumberInput("777 777 7777")
-                .clickCreateBtn()
+                .fillOutRegisterForm()
                 .verifyAccountCreated()
                 .clickContinueBtn()
                 .logout()
@@ -158,15 +126,10 @@ public class CheckoutTests extends BaseTest {
                 .reviewOrderItem3()
                 .inputComment("More Practice, Getting better")
                 .clickOnPlaceOrderBtn()
-                .enterNameOnCard("ems")
-                .enterCCNumber("0234-3423-23423-24234")
-                .inputCvcNumber("987")
-                .inputExMonth("04")
-                .inputExYear("3234")
-                .clickonPayBtn()
-                .verifyOrderPlaced()
-                .clickContinue()
-                .clickOnDelete();
+                .fillOutPaymentInfo()
+                .clickContinue();
+        signupLoginPage.clickDeleteBtn()
+                .verifyAccountDeleted();
     }
 
     @Test(priority = 4, enabled = true, description = "Test verify Address details in checkout page")
@@ -188,7 +151,8 @@ public class CheckoutTests extends BaseTest {
                 .clickContinueBtn()
                 .verifyLoggedInAsUserName();
         productsPage.hoverOverProductClickAdd();
-        cartPage.clickCartBtn()
+        cartPage.clickContinue()
+                .clickCartBtn()
                 .verifyCartPage();
         checkoutPage.proceedToCheckout()
                 .verifyAddressDetailsAndReviewOrder();
@@ -197,7 +161,7 @@ public class CheckoutTests extends BaseTest {
     }
 
     @Test(priority = 5, enabled = true, description = "Test Download Invoice after Purchase order")
-    public void downloadInvoiceAfterOrder() throws InterruptedException, IOException {
+    public void downloadInvoiceAfterOrder() throws IOException {
         signupLoginPage = new SignupLoginPage(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
@@ -225,12 +189,7 @@ public class CheckoutTests extends BaseTest {
                 .reviewOrderItem2()
                 .inputComment("kcisdcskc scsidljs dasjdv sdlkvj lsdvjsld vsjv sld v")
                 .clickOnPlaceOrderBtn()
-                .enterNameOnCard("ems")
-                .enterCCNumber("0234-3423-23423-24234")
-                .inputCvcNumber("987")
-                .inputExMonth("04")
-                .inputExYear("3234")
-                .clickonPayBtn()
+                .fillOutPaymentInfo()
                 .verifyOrderPlaced()
                 .clickDownload();
         checkoutPage.verifyDownloadIsSuccessful();

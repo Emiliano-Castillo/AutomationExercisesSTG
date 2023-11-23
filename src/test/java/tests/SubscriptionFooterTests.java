@@ -12,7 +12,7 @@ public class SubscriptionFooterTests extends BaseTest {
     CartPage cartPage;
 
     @Test(priority = 1, enabled = true, description = "Test Subscription Footer")
-    public void scrollDownPageEmailInputSubscription() throws InterruptedException {
+    public void scrollDownPageEmailInputSubscription() {
         basepage = new BasePage(driver);
         subscriptionFooterPage = new SubscriptionFooterPage(driver);
 
@@ -24,7 +24,7 @@ public class SubscriptionFooterTests extends BaseTest {
     }
 
     @Test(priority = 2, enabled = true, description = "Test Subcription in CartsPage")
-    public void cartsSubscriptions() throws InterruptedException {
+    public void cartsSubscriptions() {
         basepage = new BasePage(driver);
         subscriptionFooterPage = new SubscriptionFooterPage(driver);
         cartPage = new CartPage(driver);
@@ -49,17 +49,17 @@ public class SubscriptionFooterTests extends BaseTest {
                 .verifyFullFledgedPracticeWebsiteForAutomationEngineers();
     }
 
-//    @Test(priority = 5, enabled = true, description = "Test and verify scroll up without using Arrow btn and scroll down functionality")
-//    public void scrollUpTest () {
-//        basepage = new BasePage(driver);
-//        subscriptionFooterPage = new SubscriptionFooterPage(driver);
-//
-//        basepage.verifyHomePage();
-//        subscriptionFooterPage.scrollDown()
-//                .verifyTextSubscription()
-//                .scrollUp()
-//                .verifyFullFledgedPracticeWebsiteForAutomationEngineers();
-//    }
+    @Test(priority = 4, enabled = true, description = "Test and verify scroll up without using Arrow btn and scroll down functionality")
+    public void scrollUpTest() {
+        basepage = new BasePage(driver);
+        subscriptionFooterPage = new SubscriptionFooterPage(driver);
+
+        basepage.verifyHomePage();
+        subscriptionFooterPage.scrollDown()
+                .verifyTextSubscription()
+                .scrollUp()
+                .verifyFullFledgedPracticeWebsiteForAutomationEngineers();
+    }
 //    @Test(priority = 2, enabled = true, description = "Test Subcription in CartsPage")
 //    public void scroll() throws InterruptedException {
 //        basepage = new BasePage(driver);

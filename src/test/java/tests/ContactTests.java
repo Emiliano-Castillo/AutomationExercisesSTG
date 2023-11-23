@@ -11,7 +11,7 @@ public class ContactTests extends BaseTest {
     SignupLoginPage signupLoginPage;
     ContactPage contactPage;
 
-    @Test
+    @Test(priority = 1)
     public void contactUsForm() {
         basePage = new BasePage(driver);
         signupLoginPage = new SignupLoginPage(driver);
