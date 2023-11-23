@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 23 Verify Address details in Checkout Page">
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/PropertiesLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/VerifyDownload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
+    <list default="true" id="c75877d2-eeb2-4105-880e-f383c8e2a343" name="Changes" comment="Test Case 24 Download invoice after purchase order. Verified download and delete file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/CheckoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/SubscriptionFooterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SubscriptionFooterTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +46,7 @@
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Test-Case23-Verify-Address-Details-In-CheckoutPage" />
+        <entry key="$PROJECT_DIR$" value="Test-Case24-Download-Invoice-After-Purchase-order" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Test-Case24-Download-Invoice-After-Purchase-order",
+    "git-widget-placeholder": "Test-Case25-Verify-Scroll-Up-Using-Arrow-Up-And-Down-Functionality",
     "last_opened_file_path": "/Users/emiliano/Projects/AutomationExercisesSTG/Extensions"
   }
 }]]></component>
@@ -92,7 +88,7 @@
       <recent name="$PROJECT_DIR$/src/test/extensions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CheckoutTests.downloadInvoiceAfterOrder">
+  <component name="RunManager" selected="Gradle.SubscriptionFooterTests.scrollUpTest">
     <configuration name="CheckoutTests.downloadInvoiceAfterOrder" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -165,7 +161,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductsTests.productReview" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubscriptionFooterTests.scrollUpBtnTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -178,7 +174,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.ProductsTests.productReview&quot;" />
+            <option value="&quot;tests.SubscriptionFooterTests.scrollUpBtnTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -189,7 +185,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductsTests.recommendedSection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SubscriptionFooterTests.scrollUpTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -202,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.ProductsTests.recommendedSection&quot;" />
+            <option value="&quot;tests.SubscriptionFooterTests.scrollUpTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SubscriptionFooterTests.scrollUpTest" />
+        <item itemvalue="Gradle.SubscriptionFooterTests.scrollUpBtnTest" />
         <item itemvalue="Gradle.CheckoutTests.downloadInvoiceAfterOrder" />
         <item itemvalue="Gradle.CheckoutTests.verifyAddressDetailsInCheckout" />
         <item itemvalue="Gradle.CheckoutTests.registerWhileAtCheckout" />
-        <item itemvalue="Gradle.ProductsTests.recommendedSection" />
-        <item itemvalue="Gradle.ProductsTests.productReview" />
       </list>
     </recent_temporary>
   </component>
@@ -416,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700669459345</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Test Case 24 Download invoice after purchase order. Verified download and delete file.">
+      <option name="closed" value="true" />
+      <created>1700751615743</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1700751615743</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,7 +460,8 @@
     <MESSAGE value="Test Case 21 Add Products Review" />
     <MESSAGE value="Test Case 22 Add to cart from recommended items" />
     <MESSAGE value="Test Case 23 Verify Address details in Checkout Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Case 23 Verify Address details in Checkout Page" />
+    <MESSAGE value="Test Case 24 Download invoice after purchase order. Verified download and delete file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Case 24 Download invoice after purchase order. Verified download and delete file." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

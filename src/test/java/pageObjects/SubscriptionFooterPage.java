@@ -16,6 +16,8 @@ public class SubscriptionFooterPage extends BasePage {
     private final By emailInput = By.cssSelector("input[type='email']");
     private final By clickOnSubmitBtn = By.cssSelector("button[type='submit']");
     private final By successMessage = By.xpath("//*[text()='You have been successfully subscribed!']");
+    private final By arrowBtn = By.cssSelector("#scrollUp");
+    private final By scrollUpTo = By.cssSelector(".fa-home");
 
     //Subscriptions Methods
     public SubscriptionFooterPage enterEmailSubField(String email) {
@@ -33,6 +35,13 @@ public class SubscriptionFooterPage extends BasePage {
         actions.scrollToElement(scroll).perform();
         return this;
     }
+    private final By fullFledged = By.xpath("//*[text()='Full-Fledged practice website for Automation Engineers']");
+
+    public SubscriptionFooterPage scrollUp() {
+        WebElement scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(scrollUpTo));
+        actions.scrollToElement(scroll).perform();
+        return this;
+    }
 
     //Assertions
     public SubscriptionFooterPage verifyTextSubscription() {
@@ -44,6 +53,17 @@ public class SubscriptionFooterPage extends BasePage {
     public SubscriptionFooterPage verifySuccessMessage() {
         WebElement success = wait.until(ExpectedConditions.visibilityOfElementLocated(successMessage));
         Assert.assertTrue(success.isDisplayed());
+        return this;
+    }
+
+    public SubscriptionFooterPage clickArrowBtn() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(arrowBtn)).click();
+        return this;
+    }
+
+    public SubscriptionFooterPage verifyFullFledgedPracticeWebsiteForAutomationEngineers() {
+        WebElement fullFledgedText = wait.until(ExpectedConditions.visibilityOfElementLocated(fullFledged));
+        Assert.assertTrue(fullFledgedText.isDisplayed());
         return this;
     }
 }

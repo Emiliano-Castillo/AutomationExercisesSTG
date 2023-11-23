@@ -16,11 +16,6 @@ public class BaseTest {
 
     protected String url;
 
-//    @BeforeSuite
-//    static void setupClass () {
-//        WebDriverManager.chromedriver().setup();
-//    }
-
     @BeforeMethod
     @Parameters({"BaseURL"})
     public void launchBrowser(String BaseURL) {
@@ -28,7 +23,6 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addExtensions(new File("/Users/emiliano/Projects/AutomationExercisesSTG/src/Extensions/Ublock.crx"));
-
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
