@@ -2,7 +2,6 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -16,8 +15,8 @@ public class TestCasesPage extends BasePage {
 
     //TestCases Page Methods
     public TestCasesPage clickTestCases() {
-        WebElement btnTestCase = wait.until(ExpectedConditions.elementToBeClickable(clickOnTestCasesBtn));
-        actions.doubleClick(btnTestCase).perform();
+        wait.until(ExpectedConditions.elementToBeClickable(clickOnTestCasesBtn)).click();
+//        actions.doubleClick(btnTestCase).perform();
         return this;
     }
 

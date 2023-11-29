@@ -11,8 +11,8 @@ public class TestCasesPageTests extends BaseTest {
 
     @Test(priority = 1, enabled = true, description = "Test open Testcases Page")
     public void openTestCasesTab() {
-        basePage = new BasePage(driver);
-        testCasesPage = new TestCasesPage(driver);
+        basePage = new BasePage(getThreadLocal());
+        testCasesPage = new TestCasesPage(getThreadLocal());
 
         basePage.verifyHomePage();
         testCasesPage.clickTestCases()

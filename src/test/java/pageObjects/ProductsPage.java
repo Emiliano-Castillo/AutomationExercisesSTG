@@ -30,12 +30,13 @@ public class ProductsPage extends BasePage {
 
     //Product Page Methods
     public ProductsPage clickProductsBtn() {
-        WebElement products = wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnProductsBtn));
-        actions.moveToElement(products).doubleClick().perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnProductsBtn)).click();
+//        actions.doubleClick(products).perform();
         return this;
     }
 
     public ProductsPage clickViewProduct() {
+        actions.scrollByAmount(0, 500).build().perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnViewProductsBtn)).click();
         return this;
     }
@@ -50,7 +51,7 @@ public class ProductsPage extends BasePage {
 
     public ProductsPage hoverOverProductClickAdd() {
         WebElement moveToBlueTopEl = wait.until(ExpectedConditions.visibilityOfElementLocated(moveToBlueTop));
-        actions.moveToElement(moveToBlueTopEl).perform();
+        actions.scrollByAmount(300, 400).moveToElement(moveToBlueTopEl).build().perform();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickAddPOneBtn)).click();
         return this;
@@ -58,7 +59,7 @@ public class ProductsPage extends BasePage {
 
     public ProductsPage hoverOverSecondProductClickAdd() {
         WebElement moveToTshirtEl = wait.until(ExpectedConditions.visibilityOfElementLocated(moveToTshirt));
-        actions.moveToElement(moveToTshirtEl).perform();
+        actions.moveToElement(moveToTshirtEl).build().perform();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickAddPTwoBtn)).click();
         return this;
@@ -74,7 +75,8 @@ public class ProductsPage extends BasePage {
 
     public ProductsPage hoverOverForthProductClickAdd() {
         WebElement moveToStylishDressEl = wait.until(ExpectedConditions.visibilityOfElementLocated(moveToStylish));
-        actions.moveToElement(moveToStylishDressEl).perform();
+        actions.scrollByAmount(0, 500).moveToElement(moveToStylishDressEl).build().perform();
+
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickAddPFourBtn)).click();
         return this;
@@ -99,8 +101,9 @@ public class ProductsPage extends BasePage {
     }
 
     public ProductsPage clickDress() {
-        WebElement dress = wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDressBtn));
-        actions.doubleClick(dress).perform();
+        actions.scrollByAmount(0, 500).build().perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnDressBtn)).click();
+//        actions.doubleClick(dress).perform();
         return this;
     }
 
@@ -128,6 +131,7 @@ public class ProductsPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#name"))).sendKeys("Emiliano");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#email"))).sendKeys("emiliano.castillo@testpro.io");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[placeholder='Add Review Here!']"))).sendKeys("Great Product. Fits perfect. Give it a 10/10!");
+        actions.scrollByAmount(0, 400).build().perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#button-review"))).click();
         return this;
     }
