@@ -15,8 +15,8 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 1, enabled = true, description = "Test product page and product details")
     public void verifyProductsAndDetails() {
-        basePage = new BasePage(driver);
-        productsPage = new ProductsPage(driver);
+        basePage = new BasePage(getThreadLocal());
+        productsPage = new ProductsPage(getThreadLocal());
 
         basePage.verifyHomePage();
         productsPage.clickProductsBtn()
@@ -28,8 +28,8 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 2, enabled = true, description = "Test Product Search")
     public void searchProduct() {
-        basePage = new BasePage(driver);
-        productsPage = new ProductsPage(driver);
+        basePage = new BasePage(getThreadLocal());
+        productsPage = new ProductsPage(getThreadLocal());
 
         basePage.verifyHomePage();
         productsPage.clickProductsBtn()
@@ -42,7 +42,7 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 3, enabled = true, description = "Test View Category Products SideBar")
     public void categoryProducts() {
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage(getThreadLocal());
 
         productsPage.verifyCategoriesIsVisible()
                 .clickWomen()
@@ -55,7 +55,7 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 4, enabled = true, description = "Test View And Cart Brand Products")
     public void viewCartBrandProducts() {
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage(getThreadLocal());
 
         productsPage.clickProductsBtn()
                 .verifyBrandsAreVisible()
@@ -67,9 +67,9 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 5, enabled = true, description = "Test Search Products and Verify CArt After Login")
     public void searchProductsAndVerifyCartAfterLogin() {
-        productsPage = new ProductsPage(driver);
-        cartPage = new CartPage(driver);
-        signupLoginPage = new SignupLoginPage(driver);
+        productsPage = new ProductsPage(getThreadLocal());
+        cartPage = new CartPage(getThreadLocal());
+        signupLoginPage = new SignupLoginPage(getThreadLocal());
 
         productsPage.clickProductsBtn()
                 .verifyProductsPage()
@@ -102,7 +102,7 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 6, enabled = true, description = "Test Adding Products Review")
     public void productReview() {
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage(getThreadLocal());
 
         productsPage.clickProductsBtn()
                 .verifyProductsPage()
@@ -114,8 +114,8 @@ public class ProductsTests extends BaseTest {
 
     @Test(priority = 7, enabled = true, description = "Test recommended product items")
     public void recommendedSection() {
-        basePage = new BasePage(driver);
-        cartPage = new CartPage(driver);
+        basePage = new BasePage(getThreadLocal());
+        cartPage = new CartPage(getThreadLocal());
 
 
         basePage.scrollDown()

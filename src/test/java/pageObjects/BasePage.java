@@ -44,8 +44,8 @@ public class BasePage {
     private final By clickView = By.cssSelector("#cartModal > div > div > div.modal-body > p:nth-child(2)");
 
     public BasePage scrollDown() {
-        WebElement rItems = wait.until(ExpectedConditions.visibilityOfElementLocated(recommendedItems));
-        actions.scrollToElement(rItems).perform();
+        actions.scrollByAmount(0, 8700).perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(recommendedItems));
         return this;
     }
 
@@ -56,6 +56,12 @@ public class BasePage {
 
     public BasePage clickViewCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickView)).click();
+        return this;
+    }
+
+    //For firefox
+    public BasePage waitForLoadingBarToDisappear() {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".overlay")));
         return this;
     }
 

@@ -6,16 +6,15 @@ import pageObjects.CartPage;
 import pageObjects.ProductsPage;
 
 public class CartTests extends BaseTest {
-
     BasePage basePage;
     CartPage cartPage;
     ProductsPage productsPage;
 
     @Test(priority = 1, enabled = true, description = "Test Adding Products to Cart")
-    public void addProductsToCart() {
-        basePage = new BasePage(driver);
-        cartPage = new CartPage(driver);
-        productsPage = new ProductsPage(driver);
+    public void addProductsToCart() throws InterruptedException {
+        basePage = new BasePage(getThreadLocal());
+        cartPage = new CartPage(getThreadLocal());
+        productsPage = new ProductsPage(getThreadLocal());
 
         basePage.verifyHomePage();
         productsPage.clickProductsBtn()
@@ -29,8 +28,8 @@ public class CartTests extends BaseTest {
 
     @Test(priority = 2, enabled = true, description = "Test Product Quantity")
     public void verifyingProductQuantityInCart() {
-        basePage = new BasePage(driver);
-        cartPage = new CartPage(driver);
+        basePage = new BasePage(getThreadLocal());
+        cartPage = new CartPage(getThreadLocal());
 
         basePage.verifyHomePage();
         cartPage.clickStylishDressViewProduct()
@@ -42,17 +41,17 @@ public class CartTests extends BaseTest {
 
     @Test(priority = 3, enabled = true, description = "Test Removing products from Cart")
     public void RemovingProductsFromCart() {
-        basePage = new BasePage(driver);
-        cartPage = new CartPage(driver);
-        productsPage = new ProductsPage(driver);
+        basePage = new BasePage(getThreadLocal());
+        cartPage = new CartPage(getThreadLocal());
+        productsPage = new ProductsPage(getThreadLocal());
 
         basePage.verifyHomePage();
         productsPage.hoverOverProductClickAdd();
         cartPage.clickContinue();
         productsPage.hoverOverFifthProductClickAdd();
+        cartPage.clickContinue();
         cartPage.clickCartBtn()
                 .verifyCartPage()
-                .clickX()
                 .verifyRemovelOfProduct();
     }
 }

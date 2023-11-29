@@ -13,8 +13,8 @@ public class SubscriptionFooterTests extends BaseTest {
 
     @Test(priority = 1, enabled = true, description = "Test Subscription Footer")
     public void scrollDownPageEmailInputSubscription() {
-        basepage = new BasePage(driver);
-        subscriptionFooterPage = new SubscriptionFooterPage(driver);
+        basepage = new BasePage(getThreadLocal());
+        subscriptionFooterPage = new SubscriptionFooterPage(getThreadLocal());
 
         basepage.verifyHomePage();
         subscriptionFooterPage.scrollDown()
@@ -25,9 +25,9 @@ public class SubscriptionFooterTests extends BaseTest {
 
     @Test(priority = 2, enabled = true, description = "Test Subcription in CartsPage")
     public void cartsSubscriptions() {
-        basepage = new BasePage(driver);
-        subscriptionFooterPage = new SubscriptionFooterPage(driver);
-        cartPage = new CartPage(driver);
+        basepage = new BasePage(getThreadLocal());
+        subscriptionFooterPage = new SubscriptionFooterPage(getThreadLocal());
+        cartPage = new CartPage(getThreadLocal());
 
         basepage.verifyHomePage();
         cartPage.clickCartBtn();
@@ -39,8 +39,8 @@ public class SubscriptionFooterTests extends BaseTest {
 
     @Test(priority = 3, enabled = true, description = "Test and verify scroll up using Arrow btn and scroll down functionality")
     public void scrollDownBtnTest() {
-        basepage = new BasePage(driver);
-        subscriptionFooterPage = new SubscriptionFooterPage(driver);
+        basepage = new BasePage(getThreadLocal());
+        subscriptionFooterPage = new SubscriptionFooterPage(getThreadLocal());
 
         basepage.verifyHomePage();
         subscriptionFooterPage.scrollDown()
@@ -51,8 +51,8 @@ public class SubscriptionFooterTests extends BaseTest {
 
     @Test(priority = 4, enabled = true, description = "Test and verify scroll up without using Arrow btn and scroll down functionality")
     public void scrollUpTest() {
-        basepage = new BasePage(driver);
-        subscriptionFooterPage = new SubscriptionFooterPage(driver);
+        basepage = new BasePage(getThreadLocal());
+        subscriptionFooterPage = new SubscriptionFooterPage(getThreadLocal());
 
         basepage.verifyHomePage();
         subscriptionFooterPage.scrollDown()

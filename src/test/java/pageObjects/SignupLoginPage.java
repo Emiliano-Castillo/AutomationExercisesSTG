@@ -100,11 +100,12 @@ public class SignupLoginPage extends BasePage{
     }
     public SignupLoginPage selectYear () {
         wait.until(ExpectedConditions.visibilityOfElementLocated(formYearSelect)).click();
-        WebElement scrollDown = wait.until(ExpectedConditions.visibilityOfElementLocated(formCity));
-        actions.moveToElement(scrollDown).perform();
+//        WebElement scrollDown = wait.until(ExpectedConditions.visibilityOfElementLocated(formCity));
+//        actions.moveToElement(scrollDown).perform();
         return this;
     }
     public SignupLoginPage checkboxSignupForOurNewsletter () {
+        actions.scrollByAmount(0, 500).perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(formCheckboxNewsletter)).click();
         return this;
     }
@@ -135,6 +136,7 @@ public class SignupLoginPage extends BasePage{
         return this;
     }
     public SignupLoginPage countryDropdown () {
+        actions.scrollByAmount(700, 700).perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(formCountryDropdown)).click();
         return this;
     }
@@ -159,6 +161,7 @@ public class SignupLoginPage extends BasePage{
         return this;
     }
     public SignupLoginPage clickCreateBtn () {
+        actions.scrollByAmount(700, 700).perform();
         wait.until(ExpectedConditions.elementToBeClickable(formSubmit)).click();
         return this;
     }

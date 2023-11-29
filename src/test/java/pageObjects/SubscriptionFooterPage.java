@@ -32,15 +32,16 @@ public class SubscriptionFooterPage extends BasePage {
     }
 
     public SubscriptionFooterPage scrollDown() {
-        WebElement scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(scrollDownToFooter));
-        actions.scrollToElement(scroll).perform();
+        actions.scrollByAmount(0, 10000).build().perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(scrollDownToFooter));
+
         return this;
     }
     private final By fullFledged = By.xpath("//*[text()='Full-Fledged practice website for Automation Engineers']");
 
     public SubscriptionFooterPage scrollUp() {
-        WebElement scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(scrollUpTo));
-        actions.scrollToElement(scroll).perform();
+        actions.scrollByAmount(0, -10000).build().perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(scrollUpTo));
         return this;
     }
 

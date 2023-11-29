@@ -21,11 +21,12 @@ public class CartPage extends BasePage {
     private final By firstItemsInCart = By.cssSelector("#product-1 .cart_price");
     private final By cartquantity = By.cssSelector("#product-1 .disabled");
     private final By totalPriceItem = By.cssSelector("#product-1 .cart_total_price");
-    private final By viewBtnStylishDress = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > div:nth-child(6) > div > div.choose > ul > li > a");
+    private final By viewBtnStylishDress = By.cssSelector("div.col-sm-4:nth-child(6) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)");
     private final By inputQ = By.cssSelector("#quantity");
     private final By addToCartBtn = By.cssSelector("button[type='button']");
 
     public CartPage clickCartBtn() {
+        actions.scrollByAmount(0, -500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(cartBtn)).click();
         return this;
     }
@@ -37,12 +38,11 @@ public class CartPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickViewCartBtn)).click();
         return this;
     }
-
     public CartPage clickStylishDressViewProduct() {
+        actions.scrollByAmount(0, 900).perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(viewBtnStylishDress)).click();
         return this;
     }
-
     public CartPage inputQuantity(String number) {
         WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(inputQ));
         input.click();
@@ -99,6 +99,7 @@ public class CartPage extends BasePage {
     public CartPage verifyRemovelOfProduct() {
         try {
             WebElement removed = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text() = 'Blue Top']")));
+            clickX();
             wait.until(ExpectedConditions.invisibilityOf(removed));
             Assert.assertFalse(removed.isDisplayed());
         } catch (StaleElementReferenceException e) {

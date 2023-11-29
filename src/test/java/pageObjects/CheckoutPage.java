@@ -48,6 +48,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage clickOnPlaceOrderBtn() {
+        actions.scrollByAmount(0, 500).perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickPO)).click();
         return this;
     }
